@@ -1,12 +1,6 @@
-import {
-    CPF_FIRST_WEIGHTS,
-    CPF_SECOND_WEIGHTS,
-    isRepeated,
-    mod11,
-    onlyDigits,
-    weightedSum,
-} from '../core';
+import { isRepeated, onlyDigits } from '../core';
 import { CPF_LENGTH } from './constants';
+import { calculateFirstDigit, calculateSecondDigit } from './internal';
 
 export function isValid(value: string): boolean {
     const digits = onlyDigits(value);
@@ -19,15 +13,11 @@ export function isValid(value: string): boolean {
         return false;
     }
 
-    const toCheckDigit = (remainder: number): number => (remainder < 2 ? 0 : 11 - remainder);
+    const base = digits.slice(0, 9);
 
-    const firstSum = weightedSum(digits.slice(0, 9), CPF_FIRST_WEIGHTS);
+    const firstDigit = calculateFirstDigit(base);
 
-    const firstDigit = toCheckDigit(mod11(firstSum));
-
-    const secondSum = weightedSum(digits.slice(0, 9) + firstDigit, CPF_SECOND_WEIGHTS);
-
-    const secondDigit = toCheckDigit(mod11(secondSum));
+    const secondDigit = calculateSecondDigit(base, firstDigit);
 
     return `${firstDigit}${secondDigit}` === digits.slice(9);
 }
