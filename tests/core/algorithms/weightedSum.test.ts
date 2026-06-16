@@ -1,10 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { weightedSum } from '../../../src/core/algorithms';
-import {
-    CNPJ_FIRST_WEIGHTS,
-    CPF_FIRST_WEIGHTS,
-    CPF_SECOND_WEIGHTS,
-} from '../../../src/core/constants';
+
+const CPF_FIRST_WEIGHTS = [10, 9, 8, 7, 6, 5, 4, 3, 2] as const;
+const CPF_SECOND_WEIGHTS = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2] as const;
+const CNPJ_FIRST_WEIGHTS = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2] as const;
 
 describe('weightedSum', () => {
     it('should calculate a simple weighted sum', () => {

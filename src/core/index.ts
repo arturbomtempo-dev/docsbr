@@ -1,4 +1,4 @@
 export * from './algorithms';
-export * from './constants';
 export * from './formatting';
+export * from './mod11';
 export * from './utils';

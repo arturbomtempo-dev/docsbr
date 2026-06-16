@@ -41,4 +41,12 @@ describe('cnpj.isValid', () => {
     it('should reject invalid formatted cnpj', () => {
         expect(isValid('11.444.777/0001-00')).toBe(false);
     });
+
+    it('should validate another known valid cnpj', () => {
+        expect(isValid('12345678000195')).toBe(true);
+    });
+
+    it('should validate another formatted valid cnpj', () => {
+        expect(isValid('12.345.678/0001-95')).toBe(true);
+    });
 });

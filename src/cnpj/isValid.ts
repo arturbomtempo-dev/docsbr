@@ -1,6 +1,5 @@
-import { isRepeated, onlyDigits } from '../core';
-import { CNPJ_LENGTH } from './constants';
-import { calculateFirstDigit, calculateSecondDigit } from './internal';
+import { calculateCheckDigits, isRepeated, onlyDigits } from '../core';
+import { CNPJ_BASE_LENGTH, CNPJ_FIRST_WEIGHTS, CNPJ_LENGTH, CNPJ_SECOND_WEIGHTS } from './constants';
 
 export function isValid(value: string): boolean {
     const digits = onlyDigits(value);
@@ -13,11 +12,8 @@ export function isValid(value: string): boolean {
         return false;
     }
 
-    const base = digits.slice(0, 12);
+    const base = digits.slice(0, CNPJ_BASE_LENGTH);
+    const checkDigits = calculateCheckDigits({ base, firstWeights: CNPJ_FIRST_WEIGHTS, secondWeights: CNPJ_SECOND_WEIGHTS });
 
-    const firstDigit = calculateFirstDigit(base);
-
-    const secondDigit = calculateSecondDigit(base, firstDigit);
-
-    return `${firstDigit}${secondDigit}` === digits.slice(12);
+    return checkDigits === digits.slice(CNPJ_BASE_LENGTH);
 }

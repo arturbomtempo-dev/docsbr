@@ -1,15 +1,11 @@
-import { randomDigits } from '../core';
+import { calculateCheckDigits, randomDigits } from '../core';
+import { CPF_BASE_LENGTH, CPF_FIRST_WEIGHTS, CPF_SECOND_WEIGHTS } from './constants';
 import { format } from './format';
-import { calculateFirstDigit, calculateSecondDigit } from './internal';
 
 export function generate(formatted = false): string {
-    const base = randomDigits(9);
-
-    const firstDigit = calculateFirstDigit(base);
-
-    const secondDigit = calculateSecondDigit(base, firstDigit);
-
-    const cpf = base + firstDigit + secondDigit;
+    const base = randomDigits(CPF_BASE_LENGTH);
+    const checkDigits = calculateCheckDigits({ base, firstWeights: CPF_FIRST_WEIGHTS, secondWeights: CPF_SECOND_WEIGHTS });
+    const cpf = base + checkDigits;
 
     return formatted ? format(cpf) : cpf;
 }
