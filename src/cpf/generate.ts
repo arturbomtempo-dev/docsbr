@@ -4,7 +4,11 @@ import { format } from './format';
 
 export function generate(formatted = false): string {
     const base = randomDigits(CPF_BASE_LENGTH);
-    const checkDigits = calculateCheckDigits({ base, firstWeights: CPF_FIRST_WEIGHTS, secondWeights: CPF_SECOND_WEIGHTS });
+    const checkDigits = calculateCheckDigits({
+        base,
+        firstWeights: CPF_FIRST_WEIGHTS,
+        secondWeights: CPF_SECOND_WEIGHTS,
+    });
     const cpf = base + checkDigits;
 
     return formatted ? format(cpf) : cpf;

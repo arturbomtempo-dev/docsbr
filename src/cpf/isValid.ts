@@ -13,7 +13,11 @@ export function isValid(value: string): boolean {
     }
 
     const base = digits.slice(0, CPF_BASE_LENGTH);
-    const checkDigits = calculateCheckDigits({ base, firstWeights: CPF_FIRST_WEIGHTS, secondWeights: CPF_SECOND_WEIGHTS });
+    const checkDigits = calculateCheckDigits({
+        base,
+        firstWeights: CPF_FIRST_WEIGHTS,
+        secondWeights: CPF_SECOND_WEIGHTS,
+    });
 
     return checkDigits === digits.slice(CPF_BASE_LENGTH);
 }
