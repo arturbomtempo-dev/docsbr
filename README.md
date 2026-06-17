@@ -22,7 +22,7 @@
   <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-6.0.3-3178C6?logo=typescript&logoColor=white" alt="TypeScript 6.0.3"></a>
   <a href="https://vitest.dev/"><img src="https://img.shields.io/badge/testes-Vitest-6E9F18?logo=vitest&logoColor=white" alt="Vitest"></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-22.13.1-339933?logo=nodedotjs&logoColor=white" alt="Node.js 22.13.1"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/licença-MIT-22c55e" alt="MIT License"></a>
+  <a href="./LICENSE.md"><img src="https://img.shields.io/badge/licença-MIT-22c55e" alt="MIT License"></a>
 </div>
 
 <br>
@@ -296,6 +296,6 @@ Desenvolvido por Artur Bomtempo 👋🏻. Entre em contato:
 
 ## 📄 Licença
 
-Distribuído sob a licença **MIT**. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
+Distribuído sob a licença **MIT**. Consulte o arquivo [LICENSE](./LICENSE.md) para mais detalhes.
 
 Copyright (c) 2025 Artur Bomtempo Colen
