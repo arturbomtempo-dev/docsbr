@@ -1,1 +1,1 @@
-export * from './calculateCheckDigits';
+export * from './calculateCheckDigits.js';

@@ -1,4 +1,4 @@
-import { mod11, weightedSum } from '../algorithms';
+import { mod11, weightedSum } from '../algorithms/index.js';
 
 export interface CalculateCheckDigitsOptions {
     base: string;

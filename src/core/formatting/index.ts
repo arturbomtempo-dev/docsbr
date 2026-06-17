@@ -1,1 +1,1 @@
-export * from './applyPattern';
+export * from './applyPattern.js';

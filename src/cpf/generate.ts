@@ -1,6 +1,6 @@
-import { calculateCheckDigits, randomDigits } from '../core';
-import { CPF_BASE_LENGTH, CPF_FIRST_WEIGHTS, CPF_SECOND_WEIGHTS } from './constants';
-import { format } from './format';
+import { calculateCheckDigits, randomDigits } from '../core/index.js';
+import { CPF_BASE_LENGTH, CPF_FIRST_WEIGHTS, CPF_SECOND_WEIGHTS } from './constants.js';
+import { format } from './format.js';
 
 export function generate(formatted = false): string {
     const base = randomDigits(CPF_BASE_LENGTH);

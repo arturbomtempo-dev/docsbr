@@ -1,10 +1,10 @@
-import { calculateCheckDigits, isRepeated, onlyDigits } from '../core';
+import { calculateCheckDigits, isRepeated, onlyDigits } from '../core/index.js';
 import {
     CNPJ_BASE_LENGTH,
     CNPJ_FIRST_WEIGHTS,
     CNPJ_LENGTH,
     CNPJ_SECOND_WEIGHTS,
-} from './constants';
+} from './constants.js';
 
 export function isValid(value: string): boolean {
     const digits = onlyDigits(value);

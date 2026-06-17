@@ -1,2 +1,2 @@
-export * from './weightedSum';
-export * from './mod11';
+export * from './weightedSum.js';
+export * from './mod11.js';

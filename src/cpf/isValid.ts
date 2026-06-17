@@ -1,5 +1,5 @@
-import { calculateCheckDigits, isRepeated, onlyDigits } from '../core';
-import { CPF_BASE_LENGTH, CPF_FIRST_WEIGHTS, CPF_LENGTH, CPF_SECOND_WEIGHTS } from './constants';
+import { calculateCheckDigits, isRepeated, onlyDigits } from '../core/index.js';
+import { CPF_BASE_LENGTH, CPF_FIRST_WEIGHTS, CPF_LENGTH, CPF_SECOND_WEIGHTS } from './constants.js';
 
 export function isValid(value: string): boolean {
     const digits = onlyDigits(value);

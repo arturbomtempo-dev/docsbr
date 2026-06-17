@@ -1,3 +1,3 @@
-export * from './onlyDigits';
-export * from './isRepeated';
-export * from './randomDigits';
+export * from './onlyDigits.js';
+export * from './isRepeated.js';
+export * from './randomDigits.js';
